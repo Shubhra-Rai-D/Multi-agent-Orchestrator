@@ -75,10 +75,7 @@ class LinearAgent:
         elif "todo" in query_lower or "to do" in query_lower:
             return self.get_issues(status_filter="Todo")
         elif "high priority" in query_lower:
-             # Just an example of how we could filter, prompt doesn't specify we strictly need priority but the user asks it.
-             # The user prompt: "What issues are high priority?" -> [Clarification needed]
-             # To keep it simple, we can just return all issues or specifically handle "priority" if we expand the graphql query.
-             # We'll just return all issues for general queries.
+             
              return self.get_issues()
         else:
             return self.get_issues() # default to returning all assigned issues

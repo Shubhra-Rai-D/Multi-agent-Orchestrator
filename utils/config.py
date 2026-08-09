@@ -30,9 +30,7 @@ if user_count() == 0:
         insert_user(f"user{user_num}", name, token, username, linear_key, linear_user)
         user_num += 1
 
-# ──────────────────────────────────────────────
-# Load users from database (runtime source of truth)
-# ──────────────────────────────────────────────
+
 USERS_CONFIG = fetch_all_users()
 
 
@@ -42,9 +40,6 @@ def reload_users():
     USERS_CONFIG = fetch_all_users()
 
 
-# ──────────────────────────────────────────────
-# Helper Functions (used by orchestrator & agents)
-# ──────────────────────────────────────────────
 
 def get_user_config(user_id: str):
     """
